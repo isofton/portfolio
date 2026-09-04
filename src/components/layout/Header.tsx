@@ -46,8 +46,12 @@ export function Header() {
         scrolled ? "border-border bg-bg/90 backdrop-blur-xl" : "border-transparent"
       )}
     >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
-        <button onClick={() => go("hero")} className="flex items-center gap-2.5" aria-label="Back to top">
+      <nav className="mx-auto grid h-16 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-6 md:px-10">
+        <button
+          onClick={() => go("hero")}
+          className="flex items-center gap-2.5 justify-self-start"
+          aria-label="Back to top"
+        >
           <span className="flex h-8 w-8 items-center justify-center rounded-md border border-border-strong text-[13px] font-semibold text-text">
             DS
           </span>
@@ -80,16 +84,9 @@ export function Header() {
         </ul>
 
         <button
-          onClick={() => go("contact")}
-          className="hidden rounded-md border border-border-strong px-4 py-2 text-sm text-text transition-colors hover:border-accent/50 hover:text-accent-soft md:inline-flex"
-        >
-          Contact
-        </button>
-
-        <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border-strong text-text md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center justify-self-end rounded-md border border-border-strong text-text md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
         >
